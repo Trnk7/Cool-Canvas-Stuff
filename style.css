@@ -30,6 +30,7 @@ nav a {
 .disp {
   max-width: 90%;
   min-height: 400px;
+  max-height: 500px;
   margin: 20px auto;
   
   border-radius: 10px;
