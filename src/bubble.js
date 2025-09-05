@@ -10,8 +10,9 @@
   let offsetX = 15;
   let offsetY = 15;
   function resizeParticles() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    let disp = document.getElementsByClassName('disp')[0].getBoundingClientRect()
+    canvas.width = disp.width;
+    canvas.height = disp.height;
     let gridx = Math.floor(canvas.width / gridsize);
     let gridy = Math.floor(canvas.height / gridsize);
     offsetX = 15 + (canvas.width % gridsize) / 2;
@@ -110,3 +111,4 @@
   anim();
 
 })();
+
