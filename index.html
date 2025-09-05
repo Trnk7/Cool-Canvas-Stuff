@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Builds</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="gallery">
+      <div class="disp">
+        <canvas id="bubble-canvas"></canvas>
+      </div>
+      <div class="container">
+        <canvas id="lines-canvas" class="card" width="400" height="200"></canvas>
+        <canvas id="torch-canvas" class="card" width="400" height="200"></canvas>
+        <canvas id="splash-canvas" class="card" width="400" height="200"></canvas>
+        <canvas id="trail-canvas" class="card" width="400" height="200"></canvas>
+      </div>
+    </section>
+    <script src="src/bubble.js"></script>
+    <script src="src/lines.js"></script>
+    <script src="src/torch.js"></script>
+    <script src="src/splash.js"></script>
+    <script src="src/trail.js"></script>
+    <section id="about">
+      <h3 class="head">About Me</h3>
+      <div class="line"></div>
+      <p class="mv">
+        I'm Tarun, a devloper who loves turning code into art. This site is my
+        space to explore
+        <strong>
+          Canvas effects, Animations ans Creative coding experiments
+        </strong>
+        -a mix of learning and sharing what I build.
+      </p>
+    </section>
+    <section id="contact">
+      <h3 class="head">Contact</h3>
+      <div class="line"></div>
+      <p>Feel free to reach out to me for any questions or opportunities!</p>
+      <div class="icons">
+        <p id="cont-git">GitHub</p>
+        <p id="cont-wht">WhatsApp</p>
+        <p id="cont-mail">Email</p>
+      </div>
+      <script>
+        let git= document.getElementById("cont-git");
+        let wht= document.getElementById("cont-wht");
+        let mail= document.getElementById("cont-mail");
+
+        git.onclick=()=>{
+          location.href="https://github.com/trnk7"
+        }
+        wht.onclick=()=>{
+          location.href="https://wa.me/919644978959?text=hello%20there"
+        }
+        mail.onclick=()=>{
+          location.href="mailto:tarunkachhawa7@gmail.com"
+        }
+
+      </script>
+    </section>
+    <div class="line"></div>
+    <footer>
+      <p>© 2025 The TRN</p>
+    </footer>
+
+
+  </body>
+</html>
