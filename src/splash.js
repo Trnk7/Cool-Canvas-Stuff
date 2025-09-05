@@ -74,7 +74,9 @@
     ctx.clearRect(0, 0, cnv.width, cnv.height);
   });
   cnv.addEventListener('touchend', () => {
-    ctx.clearRect(0, 0, cnv.width, cnv.height);
+    setTimeout(() => {
+      ctx.clearRect(0, 0, cnv.width, cnv.height);
+    }, 1000);
   });
 
   function anim() {
