@@ -63,7 +63,17 @@
     const rect = cnv.getBoundingClientRect();
     splash(e.clientX - rect.left, e.clientY - rect.top);
   });
+  // Touch support
+  cnv.addEventListener('touchstart', e => {
+    const rect = cnv.getBoundingClientRect();
+    const touch = e.touches[0];
+    splash(touch.clientX - rect.left, touch.clientY - rect.top);
+    e.preventDefault();
+  }, { passive: false });
   cnv.addEventListener('mouseleave', () => {
+    ctx.clearRect(0, 0, cnv.width, cnv.height);
+  });
+  cnv.addEventListener('touchend', () => {
     ctx.clearRect(0, 0, cnv.width, cnv.height);
   });
 

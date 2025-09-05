@@ -24,7 +24,25 @@
       l.angle = Math.atan2(dy, dx);
     });
   });
+  // Touch support
+  cnv.addEventListener('touchmove', e => {
+    const touch = e.touches[0];
+    const rect = cnv.getBoundingClientRect();
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
+    lines.forEach(l => {
+      let dx = x - l.x;
+      let dy = y - l.y;
+      l.angle = Math.atan2(dy, dx);
+    });
+    e.preventDefault();
+  }, { passive: false });
   cnv.addEventListener('mouseleave', () => {
+    lines.forEach(l => {
+      l.angle = Math.sin((l.x + l.y) * 2 / Math.PI);
+    });
+  });
+  cnv.addEventListener('touchend', () => {
     lines.forEach(l => {
       l.angle = Math.sin((l.x + l.y) * 2 / Math.PI);
     });

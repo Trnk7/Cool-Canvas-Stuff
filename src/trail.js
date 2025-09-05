@@ -1,4 +1,4 @@
-// TRAIL EFFECT
+
 (function() {
   const cnv = document.getElementById('trail-canvas');
   if (!cnv) return;
@@ -45,7 +45,22 @@
       part.push(new Particle(e.offsetX, e.offsetY));
     }
   });
+  // Touch support
+  cnv.addEventListener('touchmove', e => {
+    const touch = e.touches[0];
+    const rect = cnv.getBoundingClientRect();
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
+    for (let i = 0; i < 20; i++) {
+      part.push(new Particle(x, y));
+    }
+    e.preventDefault();
+  }, { passive: false });
   cnv.addEventListener('mouseleave', () => {
+    part = [];
+    ctx.clearRect(0, 0, cnv.width, cnv.height);
+  });
+  cnv.addEventListener('touchend', () => {
     part = [];
     ctx.clearRect(0, 0, cnv.width, cnv.height);
   });

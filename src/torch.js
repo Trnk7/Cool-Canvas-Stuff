@@ -11,7 +11,7 @@
   resize();
   window.addEventListener('resize', resize);
 
-  // Letters grid
+  
   const ch = [
     "Q","W","E","R","T","T","T","Y","U","I","O","P",
     "A","S","D","F","G","H","J","K","L","Z","X","C",
@@ -41,7 +41,18 @@
     m.x = e.clientX - rect.left;
     m.y = e.clientY - rect.top;
   });
+  // Touch support
+  cnv.addEventListener('touchmove', e => {
+    const touch = e.touches[0];
+    const rect = cnv.getBoundingClientRect();
+    m.x = touch.clientX - rect.left;
+    m.y = touch.clientY - rect.top;
+    e.preventDefault();
+  }, { passive: false });
   cnv.addEventListener('mouseleave', () => {
+    m.x = NaN; m.y = NaN;
+  });
+  cnv.addEventListener('touchend', () => {
     m.x = NaN; m.y = NaN;
   });
   let rad = cnv.width / 10;

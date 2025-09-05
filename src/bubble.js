@@ -1,4 +1,4 @@
-// INTRO EFFECT
+
 (function() {
   const canvas = document.getElementById('bubble-canvas');
   if (!canvas) return;
@@ -79,15 +79,28 @@
   }
 
   let call = 0;
-  canvas.addEventListener('mousemove', function(e) {
-    call++;
-    let rect = canvas.getBoundingClientRect();
-    let i = Math.floor((e.clientX - rect.left) / gridsize);
-    let j = Math.floor((e.clientY - rect.top) / gridsize);
-    if (particles[i] && particles[i][j] && call % 5 === 0) {
-      particles[i][j].clr += 10;
-    }
-  });
+    canvas.addEventListener('mousemove', function(e) {
+      call++;
+      let rect = canvas.getBoundingClientRect();
+      let i = Math.floor((e.clientX - rect.left) / gridsize);
+      let j = Math.floor((e.clientY - rect.top) / gridsize);
+      if (particles[i] && particles[i][j] && call % 5 === 0) {
+        particles[i][j].clr += 10;
+      }
+    });
+
+    // Touch support
+    canvas.addEventListener('touchmove', function(e) {
+      call++;
+      let rect = canvas.getBoundingClientRect();
+      let touch = e.touches[0];
+      let i = Math.floor((touch.clientX - rect.left) / gridsize);
+      let j = Math.floor((touch.clientY - rect.top) / gridsize);
+      if (particles[i] && particles[i][j] && call % 5 === 0) {
+        particles[i][j].clr += 10;
+      }
+      e.preventDefault();
+    }, { passive: false });
 
   function anim() {
     updateParticles();
