@@ -11,6 +11,7 @@ body{
     background:radial-gradient(rgb(109, 108, 45),60%,rgb(0, 0, 0));
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 115%,115%;
     animation: breath 3.5s cubic-bezier(0.4, 0, 0.2, 0.6) infinite ;
 }
 nav {
@@ -102,9 +103,9 @@ footer{
 
 @keyframes breath {
     0%,100%{
-        transform: scale(1);
+        background-size: 115%,115%;
     }
     50%{
-        transform: scale(1.02);
+        background-size: 140%,140%;
     }
 }
