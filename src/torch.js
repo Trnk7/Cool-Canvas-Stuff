@@ -47,7 +47,7 @@
     const rect = cnv.getBoundingClientRect();
     m.x = touch.clientX - rect.left;
     m.y = touch.clientY - rect.top;
-    // e.preventDefault();
+    e.preventDefault();
   }, { passive: false });
   cnv.addEventListener('mouseleave', () => {
     m.x = NaN; m.y = NaN;

@@ -100,7 +100,7 @@
       if (particles[i] && particles[i][j] && call % 5 === 0) {
         particles[i][j].clr += 10;
       }
-      // e.preventDefault();
+      e.preventDefault();
     }, { passive: false });
 
   function anim() {

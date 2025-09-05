@@ -68,7 +68,7 @@
     const rect = cnv.getBoundingClientRect();
     const touch = e.touches[0];
     splash(touch.clientX - rect.left, touch.clientY - rect.top);
-    // e.preventDefault();
+    e.preventDefault();
   }, { passive: false });
   cnv.addEventListener('mouseleave', () => {
     ctx.clearRect(0, 0, cnv.width, cnv.height);
