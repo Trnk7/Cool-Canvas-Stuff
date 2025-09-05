@@ -54,7 +54,7 @@
     for (let i = 0; i < 20; i++) {
       part.push(new Particle(x, y));
     }
-    e.preventDefault();
+    // e.preventDefault();
   }, { passive: false });
   cnv.addEventListener('mouseleave', () => {
     part = [];

@@ -35,7 +35,7 @@
       let dy = y - l.y;
       l.angle = Math.atan2(dy, dx);
     });
-    e.preventDefault();
+    // e.preventDefault();
   }, { passive: false });
   cnv.addEventListener('mouseleave', () => {
     lines.forEach(l => {
