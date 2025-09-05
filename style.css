@@ -63,7 +63,7 @@ canvas {
     align-items: space-between;
 }
 .card{
-    max-width:400px;
+    max-width:390px;
     max-height: 200px;
     margin: 10px;
     border-radius: 10px;
