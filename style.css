@@ -65,7 +65,7 @@ canvas {
 .card{
     max-width:390px;
     max-height: 200px;
-    margin: 10px;
+    margin: 10px 0 10px 0;
     border-radius: 10px;
     box-shadow: #000000 0px 0px 10px;
     background:rgba(149, 149, 149, 0.078);
