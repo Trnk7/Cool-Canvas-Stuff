@@ -7,7 +7,7 @@ html{
     scroll-behavior:smooth;
 }
 body{
-    height: fit-content;
+    height: max-content;
     background:radial-gradient(rgb(109, 108, 45),60%,rgb(0, 0, 0));
     background-repeat: no-repeat;
     background-position: center;
