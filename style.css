@@ -102,9 +102,9 @@ footer{
 
 @keyframes breath {
     0%,100%{
-        background-size: 105%,105%;
+        transform: scale(1);
     }
     50%{
-        background-size: 140%,140%;
+        transform: scale(1.02);
     }
 }
