@@ -29,7 +29,7 @@ nav a {
 
 .disp {
   max-width: 90%;
-  max-height: 400px;
+  min-height: 30%;
   margin: 20px auto;
   
   border-radius: 10px;
@@ -63,8 +63,9 @@ canvas {
     align-items: space-between;
 }
 .card{
-    max-width: 250px;
-    height: 200px;
+    min-width:10%;
+    min-height: 25%;
+    max-height: 200px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: #000000 0px 0px 10px;
